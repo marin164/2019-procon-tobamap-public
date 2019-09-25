@@ -1,0 +1,83 @@
+<DOCTYPE! html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      #container {
+        width: 180px;
+        height: 255px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <div id="container">
+    </div>
+    <script type="text/javascript">
+      var categories = [
+    '乳児', '幼児', '小学生', '中学生',
+    '高校生', '青年', '壮年', '中年',
+    '前期高齢','後期高齢'
+];
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+      text: ''
+    },
+    subtitle: {
+      text: ''
+    },
+    xAxis: [{
+        className:'bar-title',
+        categories: categories,
+        reversed: false,
+        labels: {
+            step: 0,
+            style: {
+              fontSize : "12px"
+            },
+        }
+    }],
+    yAxis: {
+        title: {
+            text: null
+        },
+        labels: {
+            formatter: function () {
+                return Math.abs(this.value) + '%';
+            }
+        }
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + ' ' + this.point.category + '</b><br/>' +
+                '予想避難者数: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0) + '人';
+        }
+    },
+    series: [{
+        name: '男',
+        data: [
+            -2.2, -2.1, -2.2, -2.4,
+            -2.7, -3.0, -3.3, -3.2,
+            -2.9, -3.5
+        ]
+    }, {
+        name: '女',
+        color: '#cc7799',
+        data: [
+            2.1, 2.0, 2.1, 2.3, 2.6,
+            2.9, 3.2, 3.1, 2.9, 3.4,
+        ]
+    }]
+});
+    </script>
+  </body>
+</html>

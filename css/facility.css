@@ -1,0 +1,52 @@
+/* 全体の非表示 */
+.switcharea {
+    margin: 10px 0;
+    padding: 10px;
+}
+/*ラベル*/
+.switcharea label {
+    display: block;
+    cursor :pointer;
+}
+/*チェックボックスを非表示にする*/
+.check_content{
+    display: none;
+}
+/*中身を非表示にしておく*/
+.switcharea div {
+    height: 0;
+    overflow-y: hidden;
+    transition: 0.8s;/*ゆっくり表示させる*/
+    opacity: 0;
+}
+/*クリックで中身を表示*/
+.switcharea input:checked + label + div{
+    height: auto;
+    opacity: 1;
+}
+/*アイコン*/
+.switcharea label::before {
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 8px;
+    padding: 5px 10px;
+    content: "+"; /* 閉じている状態 */
+    padding-right: 8px;
+}
+/*クリックでアイコン入れ替え*/
+.switcharea input:checked + label::before {
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 8px;
+    padding: 5px 10px;
+    content: "-"; /* 開いている状態 */
+}
+
+
+#profile{
+  height: 300px;
+  overflow: scroll;
+}
+.facility_btn{
+  margin: 5px;
+}
