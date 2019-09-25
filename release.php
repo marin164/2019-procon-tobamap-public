@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>TobaMap(公開ページ)</title>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjpcBI57XAEzvIqzNBEj4eIpVzRaRe93U&callback=initMap" async></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap" async></script>
 
 
 <!-- <script src="takahashi/js/kmeans.js"></script> -->
